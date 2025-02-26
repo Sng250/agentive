@@ -70,6 +70,9 @@ function ChatInterface({chatId, initialMessage}: ChatInterfaceProps) {
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(requestBody)
         })
+
+        if (!response.ok) throw new Error(await response.text());
+        if (!response.body) throw new Error("No response body available");
     }catch(error) {
 
     }
