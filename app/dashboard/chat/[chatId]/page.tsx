@@ -31,7 +31,7 @@ async function ChatPage({ params }: ChatPageProps) {
         
     return (
         <div className="flex-1 overflow-hidden">
-          <ChatInterface chatId={chatId} initialMessage={initialMessages} />
+          <ChatInterface chatId={chatId} initialMessages={initialMessages} />
         </div>
       );
     }catch(error) {

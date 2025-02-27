@@ -14,8 +14,6 @@ import {
   } from "@langchain/core/prompts"; 
 import SYSTEM_MESSAGE from "@/constants/systetmMessages";
 import { AIMessage, BaseMessage, HumanMessage, SystemMessage, trimMessages } from "@langchain/core/messages";
-import { threadId } from "worker_threads";
-import { Stream } from "stream";
 
 const trimmer = trimMessages({
   maxTokens: 10,
