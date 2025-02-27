@@ -1,6 +1,12 @@
 import { ChatDeepSeek } from "@langchain/deepseek";
 import {ToolNode} from "@langchain/langgraph/prebuilt";
 import wxflows from "@wxflows/sdk/langchain";
+import {
+    END,
+    MessagesAnnotation,
+    START,
+    StateGraph,
+  } from "@langchain/langgraph";
 
 
 // Connect to wxflows
@@ -47,4 +53,16 @@ const initialiseModel = () => {
               },
         ]
     }).bindTools(tools);
+
+    return model;
+}
+
+const createWorkflow = () => {
+    const model = initialiseModel();
+    const stateGraph = new StateGraph(MessagesAnnotation).addNode(
+        "agent",
+        async (state) => {
+            const systemContent = SYSTEM_MESSAGE;
+        }
+    )
 }
