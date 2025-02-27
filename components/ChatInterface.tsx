@@ -65,7 +65,7 @@ function ChatInterface({chatId, initialMessage}: ChatInterfaceProps) {
             chatId,
         }
 
-        const response =  await fetch("/api/chat/dtream", {
+        const response =  await fetch("/api/chat/stream", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(requestBody)
